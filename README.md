@@ -25,6 +25,20 @@ caught by default
 500 
 Internal server error
 
+manually throw exception
+
+create catch filter
+
+## pipes
+
+2 use case:
+transform (string to int)
+validation: evaluate input data 
+
+happens after filters
+
+example of transformation - userId to User entity
+
 ## misc
 
 using dependency injection instead of classes reduces mem usage b/c instances are reused
