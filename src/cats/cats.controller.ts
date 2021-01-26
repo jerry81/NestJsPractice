@@ -1,13 +1,18 @@
 import { Controller, Get, Post, Body,
-  HttpCode, Header, Param, UseFilters, ParseIntPipe } from '@nestjs/common';
+  HttpCode, Header, Param, UseFilters, 
+  ParseIntPipe, UseGuards 
+} from '@nestjs/common';
+import { Roles } from '../decorators/roles.decorator'
 import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
+import { RolesGuard } from '../guard/roles.guard'
 import { CreateCatDto } from './dto/create-cat.dto'
 import { HttpExceptionFilter } from 'src/exceptions/http-exception.filter';
 import { ValidationPipe } from 'src/pipes/validation.pipe';
 
 @UseFilters(HttpExceptionFilter) // controller scoped
 @Controller('cats')
+@UseGuards(RolesGuard)
 export class CatsController {
   constructor(private catsService: CatsService) {}
 
@@ -25,6 +30,7 @@ export class CatsController {
 
   // with body
   @Post()
+  @Roles('admin')
   // @UseFilters(HttpExceptionFilter) endpoint scoped
   @Header('Cache-Control', 'no-store')
   @HttpCode(204)

@@ -39,6 +39,18 @@ happens after filters
 
 example of transformation - userId to User entity
 
+defaultValuePipe - to force a default value for a query param 
+
+## Guard
+
+determine if route handler should handle request
+
+used for authentication
+
+after middleware, before interceptor and pipe 
+
+controller scoped, method scoped, or global
+
 ## misc
 
 using dependency injection instead of classes reduces mem usage b/c instances are reused
