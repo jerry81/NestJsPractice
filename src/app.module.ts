@@ -16,6 +16,7 @@ import { LoggerMiddleware } from './middleware/logger.middleware'
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) { // in nestmodule
     consumer.apply(LoggerMiddleware) // takes in middleware injectable 
+    .exclude({ path: 'cats', method: RequestMethod.POST }) // exclusions
     .forRoutes({ path: 'c**s', method: RequestMethod.ALL}) // scope it down
   }
 }

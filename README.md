@@ -15,3 +15,6 @@ processing before request handling
 right after client http request 
 
 simplest example, logging
+
+if mw doesn't require dependencies, use functional middleware 
+
