@@ -11,6 +11,6 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node" // looks into node_modules as well as relative 
   }
 }
