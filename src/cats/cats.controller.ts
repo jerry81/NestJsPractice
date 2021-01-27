@@ -7,8 +7,8 @@ import { CatsService } from './cats.service';
 import { Cat } from './interfaces/cat.interface';
 import { RolesGuard } from '../guard/roles.guard'
 import { CreateCatDto } from './dto/create-cat.dto'
-import { HttpExceptionFilter } from 'src/exceptions/http-exception.filter';
-import { ValidationPipe } from 'src/pipes/validation.pipe';
+import { HttpExceptionFilter } from '../exceptions/http-exception.filter';
+import { ValidationPipe } from '../pipes/validation.pipe';
 
 @UseFilters(HttpExceptionFilter) // controller scoped
 @Controller('cats')

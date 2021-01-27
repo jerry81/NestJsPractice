@@ -51,6 +51,17 @@ after middleware, before interceptor and pipe
 
 controller scoped, method scoped, or global
 
+## Interceptor
+
+example given also logging, so similar to middleware?
+
+can be used to implement a timeout interceptor
+
+## testing
+
+supertest and jest
+
+
 ## misc
 
 using dependency injection instead of classes reduces mem usage b/c instances are reused
