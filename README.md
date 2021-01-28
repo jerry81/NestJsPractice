@@ -119,3 +119,57 @@ startTransaction
 commitTransaction
 rollbackTransaction
 release
+
+## caching
+
+can happen at controller level
+
+cacheInterceptor global caching 
+
+in memory or heavy duty (redis)
+
+## serialization 
+
+for filtering out password before response
+at entity level
+
+## scheduling
+
+cronjobs supported
+
+## Queues
+
+bull - redis based queue for node 
+       queue.add
+       queue.process
+
+queue producer - does work and puts data on queue
+consumer - gets data from queue and processes data
+
+## events
+
+for observer pattern
+eventbus is provided
+inject EventEmitter
+emit event
+@OnEvent annotation
+
+## compression
+
+gzip middleware done at web server level 
+not recommended for high traffic as CPU usage will go up
+recommended to offload to reverse proxy like nginx
+
+## client
+
+HTTPModule acts as nest's okHTTP
+
+## Passport
+
+nodejs authentication library
+
+authentication middleware
+
+one job: authenticate requests
+
+password, oauth, federated (OpenId)
