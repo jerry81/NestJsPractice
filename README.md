@@ -61,7 +61,61 @@ can be used to implement a timeout interceptor
 
 supertest and jest
 
+avoid database connection when testing for speed
 
 ## misc
 
 using dependency injection instead of classes reduces mem usage b/c instances are reused
+
+## sequelize 
+
+nodejs connect with rdbms like mysql and postgres
+instantiate connection with 
+const sequelize = new sequelize(connectionUrl)
+or
+const sequelize = new Sequelize(database, username, password, { host, dialect })
+then 
+sequelize.authenticate
+define models like 
+const User = sequelize.define('User', {
+  // Model attributes are defined here
+  firstName: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  lastName: {
+    type: DataTypes.STRING
+    // allowNull defaults to true
+  }
+so this is like jpa 
+
+ORM: object relation mapping - object oriented (ts) to data (db)
+
+active record vs data mapper pattern:
+AR - access db from models 
+     query methods in model
+
+DM - access db from repository layer 
+     entities very dumb 
+
+AM > DM for smaller (simpler)
+DM > AM for larger (more manageable, separation of concerns)
+
+typeOrm:
+can choose active record or dm pattern 
+
+also like jpa (orm)
+
+nest: tight integration with typeOrm and sequelize OOTB
+
+mongoose: an ODM
+
+ODM: object document maapping like ORM for nosql like mongo
+
+haven't seen before, in addition to entity, also can have entity schema 
+
+queryRunner used for transactions
+startTransaction
+commitTransaction
+rollbackTransaction
+release
