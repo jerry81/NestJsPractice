@@ -10,6 +10,9 @@ nest g service cats
 create a module
 nesg g module cats
 
+create the whole stack
+nest g resource - resource name -
+
 ## Middleware
 
 processing before request handling 
@@ -173,3 +176,6 @@ authentication middleware
 one job: authenticate requests
 
 password, oauth, federated (OpenId)
+
+supporting https: 
+need private key and public cert
