@@ -179,3 +179,16 @@ password, oauth, federated (OpenId)
 
 supporting https: 
 need private key and public cert
+
+## opteyes prototype 
+
+github link: git@github.com:mulight-venture/endpoint.git
+
+has docker compose with mysql image 
+  - 2 volumes 
+    - config files copied to mysql config 
+    - data mapped to var/lib/mysql (db data)
+environment variables on image set for root password, database, user, and password 
+restart: unless-stopped flag - controls restart policy 
+healthcheck - wait for service to be healthy before another dependency runs
+ports mapping - 33006 to 3306
